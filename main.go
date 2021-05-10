@@ -20,7 +20,7 @@ func main() {
 	directory := path + "/go-" + name
 	_, err = os.Stat(directory)
 	if os.IsNotExist(err) {
-		os.Mkdir(directory, os.ModePerm) // chmod 777
+		os.Mkdir(directory, 0755)
 	} else if err != nil {
 		fmt.Fprintf(os.Stderr, "%v\n", err)
 		os.Exit(1)
@@ -35,7 +35,7 @@ func main() {
 	fmt.Println()
 }
 `
-	err = ioutil.WriteFile(directory+"/main.go", []byte(main), os.ModePerm)
+	err = ioutil.WriteFile(directory+"/main.go", []byte(main), 0644)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "%v\n", err)
 		os.Exit(1)
@@ -44,7 +44,7 @@ func main() {
 
 go 1.16
 `, name)
-	err = ioutil.WriteFile(directory+"/go.mod", []byte(mod), os.ModePerm)
+	err = ioutil.WriteFile(directory+"/go.mod", []byte(mod), 0644)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "%v\n", err)
 		os.Exit(1)
