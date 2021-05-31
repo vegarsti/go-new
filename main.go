@@ -49,4 +49,11 @@ go 1.16
 		fmt.Fprintf(os.Stderr, "%v\n", err)
 		os.Exit(1)
 	}
+	readme := fmt.Sprintf(`# %s
+`, name)
+	err = ioutil.WriteFile(directory+"/README.md", []byte(readme), 0644)
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "%v\n", err)
+		os.Exit(1)
+	}
 }
