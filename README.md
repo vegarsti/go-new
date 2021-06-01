@@ -1,3 +1,3 @@
 # go-new
 
-`go-new my-module` creates a new directory `go-my-module` with files `main.go` and `go.mod`.
+`go-new my-module` creates a new directory `go-my-module` which contains a Go module `my-module`, and a README.
