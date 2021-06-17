@@ -1,3 +1,3 @@
-module go-new
+module github.com/vegarsti/go-new
 
 go 1.16
