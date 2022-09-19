@@ -42,7 +42,7 @@ func main() {
 	}
 	mod := fmt.Sprintf(`module %s
 
-go 1.18
+go 1.19
 `, name)
 	err = ioutil.WriteFile(directory+"/go.mod", []byte(mod), 0644)
 	if err != nil {
